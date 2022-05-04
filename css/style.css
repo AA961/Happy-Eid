@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+*{
+    margin:0;padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    --primary:#8b016a;
+    --secondry: #6f1159;
+    --secondry2: rgb(111, 17, 89,0.9);
+    --ternary: #96283a;
+    --pure: #fff;
+}
+
+body{
+    background: linear-gradient(var(--primary),var(--secondry));
+    min-height: 100vh;
+    overflow-x: hidden;
+    
+}
+
+#header{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    z-index:10000;
+}
+#header .logo{
+    color:var(--pure);
+    font-weight: 700;
+    font-size: 2rem;
+    text-decoration: none;
+}
+#header .navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header .navigation li{
+    list-style-type: none;
+    margin-left: 20px;
+}
+#header .navigation li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: var(--pure);
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.2s ease-in;
+}
+#header .navigation li a:hover,
+#header .navigation li a.active{
+    background-color: var(--pure);
+    color: var(--primary);
+}
+
+section.hero{
+    position:relative;
+    width: 100%;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+section.hero img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+section.hero img#lamp{
+    mix-blend-mode: screen;
+}
+section.hero img#masjid{
+    transform: translateY(-20px);
+}
+section.hero img#star2{
+    display: none;
+}
+.main-text{
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    color: var(--pure);
+    font-size: 10vw;
+    white-space: nowrap;
+    text-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+    font-family: 'Rancho', cursive;
+}
+
+section.eid{
+    position: relative;
+    padding: 100px;
+    background: var(--ternary);
+}
+section.eid h2{
+    font-size: 3rem;
+    color: var(--pure);
+    margin-bottom: 1.5rem;
+}
+section.eid p{
+    color: var(--pure);
+    font-family: 'Rancho', cursive;
+    font-size: 1.6rem;
+}
+
+@media(max-width: 992px){
+    #header{
+        padding: 20px;
+    }
+    #header .logo{
+        font-size: 1.5rem;
+    }
+    #header .navigation{
+        display: none;
+    }
+    .toggle{
+        position: fixed;
+        right: 30px;
+        top: 30px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url(../img/menu.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 10000001;
+        transition: all 0.2s ease-in-out;
+        
+    
+    }
+    .toggle.active{
+        background: url(../img/close.png);
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    #header .navigation.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: var(--secondry2);
+    }
+    #header .navigation.active li{
+        margin-left: 0;
+    }
+    #header .navigation.active li a{
+        margin: 5px;
+        display: inline-block;
+        font-size: 1.2rem;
+    }
+    section.eid{
+        padding: 20px;
+    }
+    section.eid h2{
+        font-size: 1.5rem;
+    }
+    section.eid p{
+        font-size: 1.2rem;
+    }
+    section.hero img#star2{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    section.hero img#masjid{
+        transform: translateY(-5px);
+    }
+    .main-text{
+        font-size: 15vw;
+    }
+}
