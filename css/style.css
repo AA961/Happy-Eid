@@ -65,6 +65,7 @@ section.hero{
     display:flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 section.hero img{
     position: absolute;
@@ -111,6 +112,10 @@ section.eid p{
 }
 
 @media(max-width: 992px){
+
+    body{
+        overflow-x: hidden;
+    }
     #header{
         padding: 20px;
     }
